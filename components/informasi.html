@@ -1,0 +1,158 @@
+<div class="container my-5">
+    <div class="row g-4">
+        <!-- SOCIAL MEDIA -->
+        <div class="col-12 col-lg-2">
+            <div class="d-flex flex-column gap-2">
+                <button class="btn btn-outline-dark">
+                    <i class="bi bi-facebook"></i>
+                </button>
+
+                <button class="btn btn-outline-dark">
+                    <i class="bi bi-instagram"></i>
+                </button>
+
+                <button class="btn btn-outline-dark">
+                    <i class="bi bi-youtube"></i>
+                </button>
+
+                <button class="btn btn-outline-dark">
+                    <i class="bi bi-tiktok"></i>
+                </button>
+
+                <button class="btn btn-outline-dark">
+                    <i class="bi bi-twitter"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- BAGIAN TENGAH -->
+        <div class="col-12 col-lg-6">
+            <!-- TOP BUTTON -->
+            <div class="d-flex gap-3 mb-3 flex-wrap">
+                <button class="btn btn-outline-primary w-100">
+                    Hubungi Admin Perpustakaan
+                </button>
+            </div>
+
+            <!-- JAM OPERASIONAL -->
+            <div class="border p-3 rounded" id="jamOperasional">
+                <h6 class="fw-bold mb-3">Jam Operasional</h6>
+
+                <!-- NORMAL -->
+                <div class="border mb-2">
+                    <div
+                        class="d-flex justify-content-between p-2"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#normal"
+                    >
+                        <span>Kondisi Normal</span>
+                        <i class="bi bi-chevron-right arrow"></i>
+                    </div>
+
+                    <div
+                        id="normal"
+                        class="collapse"
+                        data-bs-parent="#jamOperasional"
+                    >
+                        <div class="p-2 border-top">
+                            Senin - Jumat: 07.30 - 22.00 WIB <br />
+                            Sabtu: 08.00 - 16.00 WIB
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PENYESUAIAN -->
+                <div class="border mb-2">
+                    <div
+                        class="d-flex justify-content-between p-2"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#penyesuaian"
+                    >
+                        <span>Kondisi Penyesuaian</span>
+                        <i class="bi bi-chevron-right arrow"></i>
+                    </div>
+
+                    <div
+                        id="penyesuaian"
+                        class="collapse"
+                        data-bs-parent="#jamOperasional"
+                    >
+                        <div class="p-2 border-top">
+                            Jam mengikuti kebijakan terbaru kampus.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RAMADHAN -->
+                <div class="border">
+                    <div
+                        class="d-flex justify-content-between p-2"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#ramadhan"
+                    >
+                        <span>Bulan Ramadhan</span>
+                        <i class="bi bi-chevron-right arrow"></i>
+                    </div>
+
+                    <div
+                        id="ramadhan"
+                        class="collapse"
+                        data-bs-parent="#jamOperasional"
+                    >
+                        <div class="p-2 border-top">
+                            Senin - Jumat: 08.00 - 15.00 WIB
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BAGIAN KANAN -->
+        <div class="col-12 col-lg-4">
+            <div class="d-flex gap-3 mb-3 flex-wrap">
+                <button class="btn btn-outline-primary w-100">
+                    Reservasi Ruangan
+                </button>
+            </div>
+            <div class="row g-3">
+                <div class="col-4">
+                    <div class="border text-center p-3">Library</div>
+                </div>
+
+                <div class="col-4">
+                    <div class="border text-center p-3">Repository</div>
+                </div>
+
+                <div class="col-4">
+                    <div class="border text-center p-3">E-Journal</div>
+                </div>
+
+                <div class="col-6">
+                    <div class="border text-center p-3">
+                        Aplikasi E-Book Library UPNVJ
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="border text-center p-3">E-Resource</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANDUAN -->
+    <div class="row mt-4">
+        <div class="col-lg-8">
+            <div class="border p-3 rounded">
+                <h6 class="fw-bold">Cari Panduan?</h6>
+                <ul class="mb-0">
+                    <li>
+                        Panduan peminjaman, perpanjangan, dan pengembalian buku
+                    </li>
+                    <li>Panduan peminjaman ruang diskusi</li>
+                    <li>Panduan peminjaman komputer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+body {
+    padding-top: 80px;
+}
+
+/* Banner styling */
+.banner {
+    background: url('image/banner.png') center/cover no-repeat;
+    height: 300px;
+}
+
+.info-box {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: #fff;
+}
+
+.top-action {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.fb {
+    background: #3b5998;
+}
+.tw {
+    background: #1da1f2;
+}
+.yt {
+    background: #ff0000;
+}
+.ig {
+    background: #c13584;
+}
+
+.operasional {
+    background:
+        linear-gradient(rgba(0, 0, 80, 0.7), rgba(0, 0, 80, 0.7)),
+        url('image/banner.png') center/cover;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.news-item {
+    transition: all 0.3s ease;
+}
