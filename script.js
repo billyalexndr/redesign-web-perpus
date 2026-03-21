@@ -10,15 +10,29 @@ function loadComponent(id, file) {
             return response.text();
         })
         .then(data => {
-            document.getElementById(id).innerHTML = data;
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = data;
         })
         .catch(error => console.error(error));
 }
 
+
 // ===============================
-// INIT ACCORDION ICON
+// BOOTSTRAP COLLAPSE (FAQ)
 // ===============================
-function initAccordion() {
+function initBootstrapCollapse() {
+    document.querySelectorAll('.collapse').forEach(el => {
+        new bootstrap.Collapse(el, {
+            toggle: false
+        });
+    });
+}
+
+
+// ===============================
+// ACCORDION ICON (FAQ ARROW)
+// ===============================
+function initAccordionIcon() {
     document.querySelectorAll('#jamOperasional .collapse').forEach(collapseEl => {
 
         collapseEl.addEventListener('show.bs.collapse', function () {
@@ -40,8 +54,9 @@ function initAccordion() {
     });
 }
 
+
 // ===============================
-// INIT FILTER BERITA
+// FILTER BERITA
 // ===============================
 function initBeritaFilter() {
     const buttons = document.querySelectorAll('.btn-category');
@@ -54,17 +69,17 @@ function initBeritaFilter() {
 
             const category = button.dataset.category;
 
-            // RESET BUTTON
+            // reset button
             buttons.forEach(btn => {
                 btn.classList.remove('btn-dark', 'active');
                 btn.classList.add('btn-outline-dark');
             });
 
-            // ACTIVE BUTTON
+            // active button
             button.classList.add('btn-dark', 'active');
             button.classList.remove('btn-outline-dark');
 
-            // FILTER ITEM
+            // filter
             items.forEach(item => {
                 const itemCategory = item.dataset.category;
 
@@ -79,35 +94,241 @@ function initBeritaFilter() {
     });
 }
 
+
 // ===============================
-// INIT BOOTSTRAP COLLAPSE (WAJIB)
+// DATA LAYANAN
 // ===============================
-function initBootstrapCollapse() {
-    document.querySelectorAll('.collapse').forEach(el => {
-        new bootstrap.Collapse(el, {
-            toggle: false
+const layananData = {
+    sirkulasi: {
+        deskripsi: "Layanan sirkulasi meliputi peminjaman, pengembalian, dan perpanjangan koleksi buku.",
+        items: [
+            "Peminjaman Buku",
+            "Perpanjangan Buku",
+            "Pengembalian Buku"
+        ]
+    },
+    referensi: {
+        deskripsi: "Layanan referensi membantu pengguna dalam menemukan dan memahami informasi yang dibutuhkan.",
+        items: [
+            "Rekomendasi Buku",
+            "Ulasan Buku"
+        ]
+    },
+    digital: {
+        deskripsi: "Layanan digital menyediakan akses ke berbagai sumber elektronik seperti e-journal dan prosiding.",
+        items: [
+            "E-Journal",
+            "Prosiding"
+        ]
+    },
+    pendidikan: {
+        deskripsi: "Layanan pendidikan mendukung kegiatan pembelajaran melalui pelatihan dan sosialisasi.",
+        items: [
+            "Pencarian Koleksi",
+            "Sosialisasi"
+        ]
+    },
+    audiovisual: {
+        deskripsi: "Layanan audio visual menyediakan fasilitas multimedia untuk menunjang kegiatan belajar.",
+        items: [
+            "Pemutaran Video",
+            "Ruang Multimedia"
+        ]
+    }
+};
+
+
+
+// ===============================
+// RENDER LAYANAN
+// ===============================
+function renderLayanan(kategori) {
+    const container = document.getElementById("layananList");
+    const deskripsiEl = document.getElementById("deskripsi");
+
+    if (!container || !deskripsiEl) return;
+
+    const data = layananData[kategori];
+    if (!data) return;
+
+    // ✅ UPDATE DESKRIPSI
+    deskripsiEl.innerText = data.deskripsi;
+
+    // ✅ UPDATE LIST
+    container.innerHTML = "";
+
+    data.items.forEach(item => {
+        container.innerHTML += `
+            <div class="layanan-item">
+                <div class="layanan-header">
+                    <span>${item}</span>
+                    <span class="icon">></span>
+                </div>
+                <div class="layanan-body">
+                    Detail tentang ${item}
+                </div>
+            </div>
+        `;
+    });
+
+    // re-init accordion
+    initLayananAccordion();
+}
+
+
+// ===============================
+// DATA TATA TERTIB
+// ===============================
+const tatibData = {
+    tatib: {
+        deskripsi: `
+            Tata tertib perpustakaan mencakup aturan penggunaan fasilitas, 
+            kewajiban menjaga ketenangan, larangan merusak koleksi, serta 
+            ketentuan dalam peminjaman dan pengembalian buku.
+        `
+    },
+    keanggotaan: {
+        deskripsi: `
+            Keanggotaan perpustakaan memberikan akses ke berbagai layanan, 
+            termasuk peminjaman buku, akses digital, dan fasilitas lainnya. 
+            Pendaftaran dilakukan sesuai prosedur yang berlaku.
+        `
+    }
+};
+
+
+
+// ===============================
+// RENDER TATA TERTIB
+// ===============================
+function renderTatib(kategori) {
+    const deskripsiEl = document.getElementById("deskripsi");
+    if (!deskripsiEl) return;
+
+    const data = tatibData[kategori];
+    if (!data) return;
+
+    deskripsiEl.innerHTML = data.deskripsi;
+}
+
+
+// ===============================
+// CUSTOM ACCORDION (LAYANAN)
+// ===============================
+function initLayananAccordion() {
+    const headers = document.querySelectorAll('.layanan-header');
+
+    if (!headers.length) return;
+
+    headers.forEach(header => {
+        header.addEventListener('click', () => {
+
+            const item = header.parentElement;
+
+            // tutup semua kecuali yg diklik
+            document.querySelectorAll('.layanan-item').forEach(i => {
+                if (i !== item) i.classList.remove('active');
+            });
+
+            // toggle current
+            item.classList.toggle('active');
         });
     });
 }
 
 // ===============================
+// INIT KATEGORI TATA TERTIB
+// ===============================
+function initKategoriTatib() {
+    const buttons = document.querySelectorAll('.btn-kategori');
+    if (!buttons.length) return;
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            const kategori = button.dataset.kategori;
+
+            // reset button
+            buttons.forEach(btn => {
+                btn.classList.remove('btn-dark', 'active');
+                btn.classList.add('btn-outline-dark');
+            });
+
+            // active button
+            button.classList.add('btn-dark', 'active');
+            button.classList.remove('btn-outline-dark');
+
+            // render deskripsi
+            renderTatib(kategori);
+        });
+    });
+
+    // default pertama
+    renderTatib("tatib");
+}
+
+// ===============================
+// KATEGORI LAYANAN
+// ===============================
+function initKategoriLayanan() {
+    const buttons = document.querySelectorAll('.btn-kategori');
+
+    if (!buttons.length) return;
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            const kategori = button.dataset.kategori;
+
+            // reset button
+            buttons.forEach(btn => {
+                btn.classList.remove('btn-dark', 'active');
+                btn.classList.add('btn-outline-dark');
+            });
+
+            // active button
+            button.classList.add('btn-dark', 'active');
+            button.classList.remove('btn-outline-dark');
+
+            // render layanan
+            renderLayanan(kategori);
+        });
+    });
+
+    // default pertama
+    renderLayanan("sirkulasi");
+}
+
+
+// ===============================
+// INIT ALL
+// ===============================
+function initAll() {
+    initBootstrapCollapse();   // FAQ collapse
+    initAccordionIcon();       // arrow FAQ
+    initBeritaFilter();        // filter berita
+    initKategoriLayanan();     // layanan + render
+    initKategoriTatib();       // tatib + render
+}
+
+
+// ===============================
 // MAIN EXECUTION
 // ===============================
-Promise.all([
-    loadComponent("navbar", "components/navbar.html"),
-    loadComponent("banner", "components/banner.html"),
-    loadComponent("informasi", "components/informasi.html"),
-    loadComponent("berita", "components/berita.html"),
-    loadComponent("faq", "components/faq.html"),
-    loadComponent("video", "components/video.html"),
-    loadComponent("footer", "components/footer.html")
-])
-    .then(() => {
+document.addEventListener("DOMContentLoaded", () => {
 
-        // ⚠️ URUTAN PENTING
-        initBootstrapCollapse(); // harus dulu
-        initAccordion();
-        initBeritaFilter();
+    Promise.all([
+        loadComponent("navbar", "components/navbar.html"),
+        loadComponent("banner", "components/banner.html"),
+        loadComponent("informasi", "components/informasi.html"),
+        loadComponent("berita", "components/berita.html"),
+        loadComponent("faq", "components/faq.html"),
+        loadComponent("video", "components/video.html"),
+        loadComponent("footer", "components/footer.html")
+    ])
+        .then(() => {
+            initAll();
+        })
+        .catch(err => console.error("Error loading components:", err));
 
-    })
-    .catch(err => console.error("Error loading components:", err));
+});

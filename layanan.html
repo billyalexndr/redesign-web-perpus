@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <title>Website Perpustakaan</title>
+    </head>
+
+    <body>
+        <body>
+            <div id="navbar"></div>
+            <!-- Banner -->
+            <div
+                class="banner d-flex justify-content-center align-items-center text-center"
+            >
+                <div class="container">
+                    <h1 class="display-5 fw-bold text-white">LAYANAN</h1>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <!-- CATEGORY -->
+                <div class="d-flex flex-wrap gap-2 mb-3" id="kategoriTabs">
+                    <button
+                        class="btn btn-dark btn-kategori active"
+                        data-kategori="sirkulasi"
+                    >
+                        Layanan Sirkulasi
+                    </button>
+                    <button
+                        class="btn btn-outline-dark btn-kategori"
+                        data-kategori="referensi"
+                    >
+                        Layanan Referensi
+                    </button>
+                    <button
+                        class="btn btn-outline-dark btn-kategori"
+                        data-kategori="digital"
+                    >
+                        Layanan Digital
+                    </button>
+                    <button
+                        class="btn btn-outline-dark btn-kategori"
+                        data-kategori="pendidikan"
+                    >
+                        Layanan Pendidikan
+                    </button>
+                    <button
+                        class="btn btn-outline-dark btn-kategori"
+                        data-kategori="audiovisual"
+                    >
+                        Layanan Audio Visual
+                    </button>
+                </div>
+
+                <!-- DESKRIPSI -->
+                <p id="deskripsi" class="mb-4 text-muted">
+                    Penjelasan tentang layanan sirkulasi
+                </p>
+
+                <!-- LIST -->
+                <div id="layananList" class="border rounded">
+                    <!-- ITEM -->
+                    <div class="layanan-item">
+                        <div class="layanan-header">
+                            <span>Peminjaman Buku</span>
+                            <span class="icon">></span>
+                        </div>
+                        <div class="layanan-body">
+                            Prosedur peminjaman buku di perpustakaan.
+                        </div>
+                    </div>
+
+                    <div class="layanan-item">
+                        <div class="layanan-header">
+                            <span>Perpanjangan Buku</span>
+                            <span class="icon">></span>
+                        </div>
+                        <div class="layanan-body">
+                            Cara memperpanjang masa pinjam buku.
+                        </div>
+                    </div>
+
+                    <div class="layanan-item">
+                        <div class="layanan-header">
+                            <span>Pengembalian Buku</span>
+                            <span class="icon">></span>
+                        </div>
+                        <div class="layanan-body">
+                            Informasi pengembalian buku.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div id="informasi"></div>
+            <div id="berita"></div>
+            <div id="faq"></div>
+            <div id="video"></div> -->
+            <div id="footer"></div>
+
+            <script src="script.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+    </body>
+</html>

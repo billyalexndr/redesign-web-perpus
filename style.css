@@ -8,6 +8,11 @@ body {
     height: 300px;
 }
 
+.banner-home {
+    background: url('image/banner.png') center/cover no-repeat;
+    height: 100vh;
+}
+
 .info-box {
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -64,4 +69,42 @@ body {
 
 .news-item {
     transition: all 0.3s ease;
+}
+
+/* ITEM */
+.layanan-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.layanan-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.layanan-header:hover {
+    background: #f5f5f5;
+}
+
+/* BODY (HIDDEN) */
+.layanan-body {
+    display: none;
+    padding: 12px 16px;
+    background: #fafafa;
+}
+
+/* ACTIVE */
+.layanan-item.active .layanan-body {
+    display: block;
+}
+
+.layanan-item.active .icon {
+    transform: rotate(90deg);
+}
+
+/* ICON */
+.icon {
+    transition: 0.3s;
 }
