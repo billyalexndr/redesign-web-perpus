@@ -196,6 +196,39 @@ const tatibData = {
     }
 };
 
+// ===============================
+// DATA E-DOKUMEN
+// ===============================
+const edokumenData = {
+    internal: [
+        {
+            title: "Panduan Perpustakaan",
+            file: "files/panduan.pdf",
+            category: "Internal",
+            date: "2025-01-10"
+        },
+        {
+            title: "SOP Layanan",
+            file: "files/sop.pdf",
+            category: "Internal",
+            date: "2025-02-15"
+        }
+    ],
+    eksternal: [
+        {
+            title: "Jurnal Nasional",
+            file: "files/jurnal.pdf",
+            category: "Eksternal",
+            date: "2025-03-01"
+        },
+        {
+            title: "Prosiding Seminar",
+            file: "files/prosiding.pdf",
+            category: "Eksternal",
+            date: "2025-03-20"
+        }
+    ]
+};
 
 
 // ===============================
@@ -210,6 +243,50 @@ function renderTatib(kategori) {
 
     deskripsiEl.innerHTML = data.deskripsi;
 }
+
+// ===============================
+// RENDER TABLE E-DOKUMEN
+// ===============================
+function renderEDokumen(kategori) {
+    const container = document.getElementById("dokumenTable");
+    if (!container) return;
+
+    const data = edokumenData[kategori];
+    if (!data) return;
+
+    container.innerHTML = `
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Title</th>
+                        <th>Categories</th>
+                        <th>Update Date</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${data.map(item => `
+                        <tr>
+                            <td>
+                                <i class="bi bi-file-earmark-pdf text-danger me-2"></i>
+                                ${item.title}
+                            </td>
+                            <td>${item.category}</td>
+                            <td>${item.date}</td>
+                            <td>
+                                <a href="${item.file}" class="btn btn-sm btn-dark" download>
+                                    Download
+                                </a>
+                            </td>
+                        </tr>
+                    `).join("")}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
 
 
 // ===============================
@@ -268,6 +345,37 @@ function initKategoriTatib() {
 }
 
 // ===============================
+// INIT KATEGORI DOKUMEN
+// ===============================
+function initKategoriEDokumen() {
+    const buttons = document.querySelectorAll('.btn-edok');
+    if (!buttons.length) return;
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            const kategori = button.dataset.kategori;
+
+            // reset button
+            buttons.forEach(btn => {
+                btn.classList.remove('btn-dark', 'active');
+                btn.classList.add('btn-outline-dark');
+            });
+
+            // active button
+            button.classList.add('btn-dark', 'active');
+            button.classList.remove('btn-outline-dark');
+
+            renderEDokumen(kategori);
+        });
+    });
+
+    // default
+    renderEDokumen("internal");
+}
+
+
+// ===============================
 // KATEGORI LAYANAN
 // ===============================
 function initKategoriLayanan() {
@@ -307,8 +415,9 @@ function initAll() {
     initBootstrapCollapse();   // FAQ collapse
     initAccordionIcon();       // arrow FAQ
     initBeritaFilter();        // filter berita
-    initKategoriLayanan();     // layanan + render
-    initKategoriTatib();       // tatib + render
+    initKategoriLayanan();     // layanan
+    initKategoriTatib();       // tatib
+    initKategoriEDokumen();    // e-dokumen
 }
 
 

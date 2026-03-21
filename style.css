@@ -108,3 +108,11 @@ body {
 .icon {
     transition: 0.3s;
 }
+
+table td i {
+    font-size: 18px;
+}
+
+.table td {
+    vertical-align: middle;
+}
