@@ -230,6 +230,52 @@ const edokumenData = {
     ]
 };
 
+// ===============================
+// DATA FASILITAS
+// ===============================
+const fasilitasData = [
+    {
+        title: "Bahan Pustaka",
+        desc: "Koleksi buku, jurnal, dan referensi yang tersedia untuk dibaca maupun dipinjam.",
+        img: "image/tester.png"
+    },
+    {
+        title: "Bahan Elektronik",
+        desc: "Akses ke e-book, e-journal, dan sumber digital lainnya.",
+        img: "image/fasilitas2.jpg"
+    },
+    {
+        title: "Komputer",
+        desc: "Fasilitas komputer untuk pencarian informasi dan pengerjaan tugas.",
+        img: "image/fasilitas3.jpg"
+    },
+    {
+        title: "OPAC",
+        desc: "Online Public Access Catalog untuk mencari koleksi perpustakaan.",
+        img: "image/fasilitas4.jpg"
+    },
+    {
+        title: "Bahan Pustaka",
+        desc: "Koleksi buku, jurnal, dan referensi yang tersedia untuk dibaca maupun dipinjam.",
+        img: "image/tester.png"
+    },
+    {
+        title: "Bahan Elektronik",
+        desc: "Akses ke e-book, e-journal, dan sumber digital lainnya.",
+        img: "image/fasilitas2.jpg"
+    },
+    {
+        title: "Komputer",
+        desc: "Fasilitas komputer untuk pencarian informasi dan pengerjaan tugas.",
+        img: "image/fasilitas3.jpg"
+    },
+    {
+        title: "OPAC",
+        desc: "Online Public Access Catalog untuk mencari koleksi perpustakaan.",
+        img: "image/fasilitas4.jpg"
+    }
+];
+
 
 // ===============================
 // RENDER TATA TERTIB
@@ -287,6 +333,31 @@ function renderEDokumen(kategori) {
     `;
 }
 
+// ===============================
+// RENDER FASILITAS
+// ===============================
+function renderFasilitas() {
+    const container = document.getElementById("fasilitasContainer");
+    if (!container) return;
+
+    container.innerHTML = fasilitasData.map(item => `
+        <div class="col-md-3 col-sm-6">
+            <div class="fasilitas-card h-100">
+                
+                <h6 class="fw-bold mb-2">${item.title}</h6>
+
+                <p class="text-muted small">
+                    ${item.desc}
+                </p>
+
+                <div class="fasilitas-img mt-auto">
+                    <img src="${item.img}" alt="${item.title}">
+                </div>
+
+            </div>
+        </div>
+    `).join("");
+}
 
 
 // ===============================
@@ -374,6 +445,18 @@ function initKategoriEDokumen() {
     renderEDokumen("internal");
 }
 
+// ===============================
+// INIT FASILITAS
+// ===============================
+function initFasilitas() {
+    const container = document.getElementById("fasilitasContainer");
+
+    // ❗ jika bukan halaman fasilitas → stop
+    if (!container) return;
+
+    renderFasilitas();
+}
+
 
 // ===============================
 // KATEGORI LAYANAN
@@ -418,6 +501,7 @@ function initAll() {
     initKategoriLayanan();     // layanan
     initKategoriTatib();       // tatib
     initKategoriEDokumen();    // e-dokumen
+    initFasilitas();            // fasilitas
 }
 
 
