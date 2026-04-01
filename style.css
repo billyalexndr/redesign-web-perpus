@@ -186,3 +186,27 @@ table td i {
     height: 100%;
     object-fit: cover;
 }
+
+.border:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+a img {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+a img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.layanan-img {
+    /* max-width: 200px; */
+    width: auto;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}

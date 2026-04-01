@@ -102,40 +102,142 @@ const layananData = {
     sirkulasi: {
         deskripsi: "Layanan sirkulasi meliputi peminjaman, pengembalian, dan perpanjangan koleksi buku.",
         items: [
-            "Peminjaman Buku",
-            "Perpanjangan Buku",
-            "Pengembalian Buku"
+            {
+                title: "Peminjaman Buku",
+                desc: {
+                    type: "text",
+                    content: "Layanan untuk meminjam buku sesuai ketentuan perpustakaan."
+                }
+            },
+            {
+                title: "Perpanjangan Buku",
+                desc: {
+                    type: "image",
+                    src: "/image/perpanjangan.png",
+                    caption: "Proses perpanjangan buku"
+                }
+            },
+            {
+                title: "Pengembalian Buku",
+                desc: {
+                    type: "mix",
+                    text: "Pengembalian buku dilakukan di meja layanan.",
+                    src: "/image/pengembalian.png"
+                }
+            }
         ]
     },
+
     referensi: {
         deskripsi: "Layanan referensi membantu pengguna dalam menemukan dan memahami informasi yang dibutuhkan.",
         items: [
-            "Rekomendasi Buku",
-            "Ulasan Buku"
+            {
+                title: "Rekomendasi Buku",
+                desc: {
+                    type: "text",
+                    content: "Memberikan saran buku sesuai kebutuhan pengguna."
+                }
+            },
+            {
+                title: "Ulasan Buku",
+                desc: {
+                    type: "mix",
+                    text: "Informasi ringkasan dan evaluasi isi buku.",
+                    src: "/image/tester.png"
+                }
+            }
         ]
     },
+
     digital: {
         deskripsi: "Layanan digital menyediakan akses ke berbagai sumber elektronik seperti e-journal dan prosiding.",
         items: [
-            "E-Journal",
-            "Prosiding"
+            {
+                title: "E-Journal",
+                desc: {
+                    type: "image",
+                    src: "/image/journal.png",
+                    caption: "Akses jurnal digital"
+                }
+            },
+            {
+                title: "Prosiding",
+                desc: {
+                    type: "text",
+                    content: "Kumpulan makalah ilmiah dari seminar dan konferensi."
+                }
+            }
         ]
     },
+
     pendidikan: {
         deskripsi: "Layanan pendidikan mendukung kegiatan pembelajaran melalui pelatihan dan sosialisasi.",
         items: [
-            "Pencarian Koleksi",
-            "Sosialisasi"
+            {
+                title: "Pencarian Koleksi",
+                desc: {
+                    type: "text",
+                    content: "Pelatihan cara mencari buku dan referensi secara efektif."
+                }
+            },
+            {
+                title: "Sosialisasi",
+                desc: {
+                    type: "image",
+                    src: "/image/sosialisasi.png",
+                    caption: "Kegiatan sosialisasi perpustakaan"
+                }
+            }
         ]
     },
+
     audiovisual: {
         deskripsi: "Layanan audio visual menyediakan fasilitas multimedia untuk menunjang kegiatan belajar.",
         items: [
-            "Pemutaran Video",
-            "Ruang Multimedia"
+            {
+                title: "Pemutaran Video",
+                desc: {
+                    type: "mix",
+                    text: "Fasilitas untuk menonton materi pembelajaran berbasis video.",
+                    src: "/image/video.png"
+                }
+            },
+            {
+                title: "Ruang Multimedia",
+                desc: {
+                    type: "text",
+                    content: "Ruangan khusus dengan perangkat multimedia untuk belajar."
+                }
+            }
         ]
     }
 };
+
+
+function renderDesc(desc) {
+    if (!desc || !desc.type) return "";
+
+    switch (desc.type) {
+        case "text":
+            return `<p>${desc.content}</p>`;
+
+        case "image":
+            return `
+        <img src="${desc.src}" class="layanan-img mb-2"/>
+        <p>${desc.caption || ""}</p>
+    `;
+
+        case "mix":
+            return `
+        <p>${desc.text}</p>
+        <img src="${desc.src}" class="layanan-img mt-2"/>
+    `;
+
+
+        default:
+            return "";
+    }
+}
 
 
 
@@ -151,29 +253,29 @@ function renderLayanan(kategori) {
     const data = layananData[kategori];
     if (!data) return;
 
-    // ✅ UPDATE DESKRIPSI
+    // update deskripsi utama
     deskripsiEl.innerText = data.deskripsi;
 
-    // ✅ UPDATE LIST
+    // reset list
     container.innerHTML = "";
 
     data.items.forEach(item => {
         container.innerHTML += `
             <div class="layanan-item">
                 <div class="layanan-header">
-                    <span>${item}</span>
+                    <span>${item.title}</span>
                     <span class="icon">></span>
                 </div>
                 <div class="layanan-body">
-                    Detail tentang ${item}
+                    ${renderDesc(item.desc)}
                 </div>
             </div>
         `;
     });
 
-    // re-init accordion
     initLayananAccordion();
 }
+
 
 
 // ===============================
@@ -202,8 +304,8 @@ const tatibData = {
 const edokumenData = {
     internal: [
         {
-            title: "Panduan Perpustakaan",
-            file: "files/panduan.pdf",
+            title: "CV BILLY",
+            file: "/files/CV_Billy Alexander.pdf",
             category: "Internal",
             date: "2025-01-10"
         },
