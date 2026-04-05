@@ -28,6 +28,121 @@ function initBootstrapCollapse() {
     });
 }
 
+// ===============================
+// SEARCH CONFIG
+// ===============================
+const searchConfig = {
+    library: (q) =>
+        `http://library.upnvj.ac.id/index.php?keywords=${q}&search=search`,
+
+    ejournal: (q) =>
+        `https://ejournal.upnvj.ac.id/index.php/index/search/search?simpleQuery=${q}&searchField=query`,
+
+    repository: (q) =>
+        `https://repository.upnvj.ac.id/cgi/search/simple?q=${q}&_action_search=Search&_order=bytitle&basic_srchtype=ALL&_satisfyall=ALL`
+};
+
+
+// ===============================
+// SEARCH INIT
+// ===============================
+function initSearch() {
+    const buttons = document.querySelectorAll(".search-btn");
+    const input = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+
+    if (!buttons.length || !input || !searchBtn) return;
+
+    let activeType = "library"; // default
+
+    // =====================
+    // HANDLE BUTTON CLICK
+    // =====================
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const type = btn.dataset.type;
+
+            // update active state
+            buttons.forEach(b => {
+                b.classList.remove("active", "btn-primary");
+                b.classList.add("btn-outline-light");
+            });
+
+            btn.classList.add("active", "btn-primary");
+            btn.classList.remove("btn-outline-light");
+
+            activeType = type;
+        });
+    });
+
+    // =====================
+    // HANDLE SEARCH CLICK
+    // =====================
+    function handleSearch() {
+        const keyword = input.value.trim();
+
+        if (!keyword) return;
+
+        const urlBuilder = searchConfig[activeType];
+        if (!urlBuilder) return;
+
+        const finalUrl = urlBuilder(encodeURIComponent(keyword));
+
+        // open new tab
+        window.open(finalUrl, "_blank");
+    }
+
+    searchBtn.addEventListener("click", handleSearch);
+
+    // enter key support
+    input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    });
+}
+
+
+// ===============================
+// SOSIAL MEDIA TRIGGER
+// ===============================
+function initSocialTrigger() {
+    const social = document.getElementById("socialFloating");
+    const trigger = document.getElementById("informasi");
+
+    if (!social || !trigger) return;
+
+    let hasPassed = false;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    // saat masuk informasi
+                    hasPassed = true;
+                    social.classList.add("show");
+                } else {
+                    // kalau keluar ke ATAS (balik ke banner)
+                    if (window.scrollY < trigger.offsetTop) {
+                        hasPassed = false;
+                        social.classList.remove("show");
+                    }
+                }
+
+            });
+        },
+        {
+            threshold: 0.2
+        }
+    );
+
+    observer.observe(trigger);
+}
+
+
+
+
 
 // ===============================
 // ACCORDION ICON (FAQ ARROW)
@@ -748,6 +863,8 @@ function initAll() {
     initKategoriTatib();       // tatib
     initKategoriEDokumen();    // e-dokumen
     initFasilitas();            // fasilitas
+    initSearch();                // search
+    initSocialTrigger();          // sosial media sticky
 }
 
 
