@@ -100,42 +100,60 @@ function initBeritaFilter() {
 // ===============================
 const layananData = {
     sirkulasi: {
-        deskripsi: "Layanan sirkulasi meliputi peminjaman, pengembalian, dan perpanjangan koleksi buku.",
+        deskripsi: "Layanan sirkulasi adalah layanan untuk administrasi peminjaman, perpanjangan, pengembalian buku, pendaftaran keanggotaan, penerbitan surat bebas pustaka dan penyerahan tugas akhir atau karya ilmiah bagi mahasiswa yang menyelesaikan kuliah, cuti kuliah, mengundurkan diri.",
         items: [
             {
                 title: "Peminjaman Buku",
                 desc: {
-                    type: "text",
-                    content: "Layanan untuk meminjam buku sesuai ketentuan perpustakaan."
+                    type: "mix",
+                    text: "Proses peminjaman buku",
+                    src: "/image/peminjaman_buku.jpg",
                 }
             },
             {
                 title: "Perpanjangan Buku",
                 desc: {
-                    type: "image",
-                    src: "/image/perpanjangan.png",
-                    caption: "Proses perpanjangan buku"
+                    type: "mix",
+                    text: "Proses perpanjangan buku",
+                    src: "/image/perpanjangan_buku.jpg"
                 }
             },
             {
                 title: "Pengembalian Buku",
                 desc: {
                     type: "mix",
-                    text: "Pengembalian buku dilakukan di meja layanan.",
-                    src: "/image/pengembalian.png"
+                    text: "Proses pengembalian buku",
+                    src: "/image/pengembalian_buku.jpg"
+                }
+            },
+            {
+                title: "Peminjaman Komputer",
+                desc: {
+                    type: "mix",
+                    text: "Proses peminjaman komputer",
+                    src: "/image/peminjaman_komputer.jpg"
+                }
+            },
+            {
+                title: "Peminjaman Ruang Diskusi",
+                desc: {
+                    type: "mix",
+                    text: "Proses peminjaman ruang diskusi",
+                    src: "/image/peminjaman_ruangdiskusi.jpg"
                 }
             }
         ]
     },
 
     referensi: {
-        deskripsi: "Layanan referensi membantu pengguna dalam menemukan dan memahami informasi yang dibutuhkan.",
+        deskripsi: " Layanan referensi adalah layanan yang diberikan untuk membantu pemustaka menemukan informasi yang diperlukan dengan menjawab pertanyaan menggunakan koleksi referensi yang dimiliki Perpustakaan UPNVJ, serta memberikan bimbingan kepada pemustaka untuk menemukan koleksi referesi yang dibutuhkan.",
         items: [
             {
                 title: "Rekomendasi Buku",
                 desc: {
-                    type: "text",
-                    content: "Memberikan saran buku sesuai kebutuhan pengguna."
+                    type: "mix",
+                    text: "Informasi rekomendasi buku.",
+                    src: "/image/rekomendasi_buku.jpg"
                 }
             },
             {
@@ -143,63 +161,76 @@ const layananData = {
                 desc: {
                     type: "mix",
                     text: "Informasi ringkasan dan evaluasi isi buku.",
-                    src: "/image/tester.png"
+                    src: "/image/ulasan_buku.jpg"
                 }
             }
         ]
     },
 
     digital: {
-        deskripsi: "Layanan digital menyediakan akses ke berbagai sumber elektronik seperti e-journal dan prosiding.",
+        deskripsi: "Layanan digital adalah layanan yang disediakan UPA. Perpustakaan meliputi koleksi elektronik seperti Jurnal, Prosiding, E-Paper, E-Megazine yang dapat diakses (full text) baik yang diterbitkan oleh UPNVJ maupun yang diterbitkan penerbit lainnya",
         items: [
+            {
+                title: "E-Paper Magazine",
+                desc: {
+                    type: "mix",
+                    text: "E-Paper dan E-Megazine merupakan koleksi surat kabar dan majalah yang dilanggan oleh UPT. Perpustakaan dalam format elektronik (digital) yang dapat diakses dengan menggunakan komputer yang telah disediakan diruangan perpustakaan lantai 4.",
+                    src: "/image/magazine.png",
+                }
+            },
             {
                 title: "E-Journal",
                 desc: {
                     type: "image",
                     src: "/image/journal.png",
-                    caption: "Akses jurnal digital"
                 }
             },
             {
                 title: "Prosiding",
                 desc: {
-                    type: "text",
-                    content: "Kumpulan makalah ilmiah dari seminar dan konferensi."
+                    type: "image",
+                    src: "/image/prosiding.png",
                 }
             }
         ]
     },
 
     pendidikan: {
-        deskripsi: "Layanan pendidikan mendukung kegiatan pembelajaran melalui pelatihan dan sosialisasi.",
+        deskripsi: "Layanan pendidikan pengguna adalah layanan jasa pemanduan dari UPA. Perpustakaan yang memberikan ilmu keterampilan dan tata cara untuk menggunakan perpustakaan sehingga pemustaka lebih cepat, tepat, dan optimal dalam menggunakan perpustakaan.",
         items: [
             {
                 title: "Pencarian Koleksi",
                 desc: {
-                    type: "text",
-                    content: "Pelatihan cara mencari buku dan referensi secara efektif."
+                    type: "mix",
+                    text: "OPAC (Untuk Pencarian Koleksi Lebih Cepat)",
+                    src: "/image/pencarian_koleksi.jpg"
                 }
             },
             {
                 title: "Sosialisasi",
                 desc: {
                     type: "image",
-                    src: "/image/sosialisasi.png",
-                    caption: "Kegiatan sosialisasi perpustakaan"
+                    src: "/image/sosialisasi.jpg",
+                }
+            },
+            {
+                title: "Video Tutorial",
+                desc: {
+                    type: "image",
+                    src: "/image/video_tutorial.jpg",
                 }
             }
         ]
     },
 
     audiovisual: {
-        deskripsi: "Layanan audio visual menyediakan fasilitas multimedia untuk menunjang kegiatan belajar.",
+        deskripsi: "Layanan audio visual adalah koleksi berbentuk non buku seperti: CD/VCD, video, slide..",
         items: [
             {
                 title: "Pemutaran Video",
                 desc: {
-                    type: "mix",
-                    text: "Fasilitas untuk menonton materi pembelajaran berbasis video.",
-                    src: "/image/video.png"
+                    type: "text",
+                    content: "Fasilitas untuk menonton materi pembelajaran berbasis video.",
                 }
             },
             {
@@ -284,16 +315,129 @@ function renderLayanan(kategori) {
 const tatibData = {
     tatib: {
         deskripsi: `
-            Tata tertib perpustakaan mencakup aturan penggunaan fasilitas, 
-            kewajiban menjaga ketenangan, larangan merusak koleksi, serta 
-            ketentuan dalam peminjaman dan pengembalian buku.
+            <h3>TATA TERTIB</h3>
+
+<p><strong>Pada waktu masuk gedung/ruang UPT. Perpustakaan, pemustaka wajib:</strong></p>
+<ul>
+    <li>Mahasiswa membawa Kartu Tanda Mahasiswa yang masih berlaku;</li>
+    <li>Dosen dan tenaga kependidikan membawa Kartu Identitas Pegawai;</li>
+    <li>Masyarakat umum membawa KTP atau kartu identitas lainnya;</li>
+    <li>Mengisi daftar hadir;</li>
+    <li>Berpakaian rapi, sopan, dan bersepatu;</li>
+    <li>Tidak makan, minum (kecuali air mineral), dan tidak merokok;</li>
+    <li>Menyimpan tas di loker (kecuali barang berharga);</li>
+</ul>
+
+<p><strong>Selama di dalam perpustakaan, dilarang:</strong></p>
+<ul>
+    <li>Merusak, merobek, atau mencoret bahan pustaka;</li>
+    <li>Merusak sarana dan prasarana;</li>
+    <li>Mencoret peralatan atau dinding;</li>
+    <li>Mengotori ruangan;</li>
+    <li>Membawa keluar koleksi tanpa proses peminjaman;</li>
+    <li>Membuat gaduh yang mengganggu;</li>
+</ul>
+
+<p><strong>Pada waktu keluar perpustakaan:</strong></p>
+<ul>
+    <li>Bersedia diperiksa oleh petugas;</li>
+    <li>Menunjukkan bahan pustaka yang dibawa keluar;</li>
+</ul>
+
+<hr>
+
+<h3>PERATURAN PEMINJAMAN, PERPANJANGAN, DAN PENGEMBALIAN</h3>
+
+<p><strong>Koleksi yang boleh dipinjam:</strong></p>
+<ul>
+    <li>Buku teks: 7 hari;</li>
+    <li>Peminjaman singkat: 1 hari;</li>
+</ul>
+
+<p><strong>Koleksi yang tidak boleh dipinjam:</strong></p>
+<ul>
+    <li>Referensi (kode R, label oranye: kamus, ensiklopedia, dll);</li>
+    <li>Tugas akhir, skripsi, tesis, disertasi;</li>
+    <li>Karya ilmiah sivitas akademika;</li>
+    <li>Terbitan berseri (majalah, jurnal, koran);</li>
+    <li>Koleksi tertentu yang dijaga (kecuali izin Kepala UPT);</li>
+</ul>
+
+<p>
+Saat peminjaman, anggota wajib menunjukkan kartu identitas kepada petugas.
+</p>
+
+<p>
+Perpanjangan hanya bisa dilakukan sebelum jatuh tempo.
+</p>
+
+<p>
+Saat pengembalian, buku harus sesuai judul dan kondisi awal.
+</p>
+
+<hr>
+
+<h3>SANKSI DAN PELANGGARAN</h3>
+
+<ul>
+    <li>Pemanfaatan koleksi berdasarkan prinsip keadilan dan tanggung jawab;</li>
+    <li>Terlambat 1 hari → tidak boleh meminjam selama 7 hari (berlaku kelipatan);</li>
+    <li>Merusak/menghilangkan buku → wajib mengganti;</li>
+    <li>Merusak saat penggunaan → wajib mengganti;</li>
+    <li>Penyalahgunaan kartu menjadi tanggung jawab pemilik;</li>
+    <li>Masih punya pinjaman → tidak bisa meminjam lagi;</li>
+</ul>
         `
     },
     keanggotaan: {
         deskripsi: `
-            Keanggotaan perpustakaan memberikan akses ke berbagai layanan, 
-            termasuk peminjaman buku, akses digital, dan fasilitas lainnya. 
-            Pendaftaran dilakukan sesuai prosedur yang berlaku.
+            <h3>KEANGGOTAAN</h3>
+
+<p>
+Seluruh sivitas akademika aktif UPN Veteran Jakarta secara otomatis menjadi anggota Perpustakaan UPNVJ.
+</p>
+
+<h3>HAK DAN KEWAJIBAN ANGGOTA</h3>
+
+<p><strong>Hak peminjaman buku:</strong></p>
+<ul>
+    <li>
+        Mahasiswa dapat meminjam maksimal 3 buku:
+        <ul>
+            <li>Buku teks: 7 hari;</li>
+            <li>Koleksi peminjaman singkat: 1 hari;</li>
+            <li>Dapat diperpanjang 1 kali untuk durasi yang sama;</li>
+        </ul>
+    </li>
+    <li>
+        Dosen dan tenaga kependidikan dapat meminjam maksimal 5 buku:
+        <ul>
+            <li>Buku teks: 14 hari;</li>
+            <li>Koleksi peminjaman singkat: 1 hari;</li>
+            <li>Dapat diperpanjang 1 kali untuk durasi yang sama;</li>
+        </ul>
+    </li>
+    <li>
+        Masyarakat umum hanya diperbolehkan membaca di dalam gedung perpustakaan sesuai ketentuan.
+    </li>
+</ul>
+
+<p><strong>Kewajiban anggota:</strong></p>
+<ul>
+    <li>Mahasiswa yang cuti, mengundurkan diri, atau lulus wajib mengurus bebas pustaka;</li>
+    <li>Mahasiswa lulus wajib menyerahkan Tugas Akhir, Skripsi, Tesis, dan Artikel Jurnal;</li>
+    <li>Dosen dan tenaga kependidikan yang mengundurkan diri wajib mengurus bebas pustaka;</li>
+    <li>Seluruh pemustaka wajib mematuhi peraturan perpustakaan;</li>
+</ul>
+
+<h3>CEK KEANGGOTAAN DAN BEBAS PUSTAKA</h3>
+
+<p>
+Anda dapat melihat status keanggotaan dan peminjaman buku melalui sistem yang tersedia.
+Gunakan username dan password SIAKAD Anda untuk login.
+</p>
+
+<p><strong>Cek Status</strong></p>
         `
     }
 };

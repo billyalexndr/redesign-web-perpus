@@ -210,3 +210,11 @@ a img:hover {
     display: block;
     margin: 0 auto;
 }
+
+#deskripsi h3 {
+    margin-top: 20px;
+}
+
+#deskripsi ul {
+    margin-left: 20px;
+}
