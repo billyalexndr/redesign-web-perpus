@@ -3,21 +3,25 @@
         <!-- SOCIAL MEDIA -->
         <div id="socialFloating">
             <div class="social-wrapper d-flex flex-column gap-2">
-                <button class="btn btn-outline-dark">
+                <a href="https://www.facebook.com/perpustakaanupnvj" target="_blank" class="btn btn-outline-dark facebook">
                     <i class="bi bi-facebook"></i>
-                </button>
-                <button class="btn btn-outline-dark">
+                </a>
+
+                <a href="https://www.instagram.com/perpustakaanupnvj/" target="_blank" class="btn btn-outline-dark instagram">
                     <i class="bi bi-instagram"></i>
-                </button>
-                <button class="btn btn-outline-dark">
+                </a>
+
+                <a href="https://www.youtube.com/channel/UCJ3wVQRnxl5LBKNDBmx4lYQ" target="_blank" class="btn btn-outline-dark youtube">
                     <i class="bi bi-youtube"></i>
-                </button>
-                <button class="btn btn-outline-dark">
+                </a>
+
+                <a href="https://x.com/upnvj_library" target="_blank" class="btn btn-outline-dark tiktok">
                     <i class="bi bi-tiktok"></i>
-                </button>
-                <button class="btn btn-outline-dark">
+                </a>
+
+                <a href="https://www.tiktok.com/@perpustakaanupnvj" target="_blank" class="btn btn-outline-dark twitter">
                     <i class="bi bi-twitter"></i>
-                </button>
+                </a>
             </div>
         </div>
 
@@ -25,9 +29,12 @@
         <div class="col-12 col-lg-7">
             <!-- TOP BUTTON -->
             <div class="d-flex gap-3 mb-3 flex-wrap">
-                <button class="btn btn-outline-primary w-100">
+                <a href="https://wa.me/085811591970" 
+                    class="btn btn-outline-primary w-100"
+                    target="_blank"
+                    style="position: relative; z-index: 100;">
                     Hubungi Admin Perpustakaan
-                </button>
+                </a>
             </div>
 
             <!-- JAM OPERASIONAL -->
@@ -37,7 +44,7 @@
                 <!-- NORMAL -->
                 <div class="border mb-2">
                     <div
-                        class="d-flex justify-content-between p-2"
+                        class="d-flex justify-content-between p-2 header-jam collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#normal"
                     >
@@ -51,8 +58,10 @@
                         data-bs-parent="#jamOperasional"
                     >
                         <div class="p-2 border-top">
-                            Senin - Jumat: 07.30 - 22.00 WIB <br />
-                            Sabtu: 08.00 - 16.00 WIB
+                            Senin - Kamis: 07.30 - 19.00 WIB <br />
+                            Jumat: 07.30 - 19.30 WIB <br />
+                            Sabtu: 08.00 - 12.00 WIB <br />
+                            Minggu & Hari Libur Nasional : Tutup
                         </div>
                     </div>
                 </div>
@@ -60,7 +69,7 @@
                 <!-- PENYESUAIAN -->
                 <div class="border mb-2">
                     <div
-                        class="d-flex justify-content-between p-2"
+                        class="d-flex justify-content-between p-2 header-jam collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#penyesuaian"
                     >
@@ -74,7 +83,10 @@
                         data-bs-parent="#jamOperasional"
                     >
                         <div class="p-2 border-top">
-                            Jam mengikuti kebijakan terbaru kampus.
+                            Senin s.d Kamis: 07:30 – 16:00 WIB <br />
+                            Jum’at : 07:30 -16:30 WIB <br />
+                            Sabtu : Tutup <br />
+                            Minggu & Hari Libur Nasional : Tutup <br />
                         </div>
                     </div>
                 </div>
@@ -82,7 +94,7 @@
                 <!-- RAMADHAN -->
                 <div class="border">
                     <div
-                        class="d-flex justify-content-between p-2"
+                        class="d-flex justify-content-between p-2 header-jam collapsed"
                         data-bs-toggle="collapse"
                         data-bs-target="#ramadhan"
                     >
@@ -96,7 +108,10 @@
                         data-bs-parent="#jamOperasional"
                     >
                         <div class="p-2 border-top">
-                            Senin - Jumat: 08.00 - 15.00 WIB
+                            Senin s.d Kamis: 08:00 – 15:00 WIB <br />
+                            Jum’at : 08:00 - 15:30 WIB <br />
+                            Sabtu : Tutup <br />
+                            Minggu & Hari Libur Nasional : Tutup <br />
                         </div>
                     </div>
                 </div>
@@ -107,83 +122,94 @@
         <div class="col-12 col-lg-5">
             <!-- CTA utama -->
             <div class="d-flex gap-3 mb-3 flex-wrap">
-                <a href="/reservasi" class="btn btn-outline-primary w-100">
+                <a href="https://wa.me/6281234567890" 
+                    class="btn btn-outline-primary w-100"
+                    target="_blank"
+                    style="position: relative; z-index: 100;">
                     Reservasi Ruangan
                 </a>
             </div>
 
             <!-- Grid Menu -->
             <div class="row g-3">
-                <!-- Library -->
-                <div class="col-4">
-                    <a href="/library" class="text-decoration-none text-dark">
-                        <div class="border text-center p-2 h-100">
-                            <img
-                                src="img/library.png"
-                                class="img-fluid mb-2"
-                                alt="Library"
-                            />
-                            <div>Library</div>
-                        </div>
-                    </a>
-                </div>
-
                 <!-- Repository -->
                 <div class="col-4 text-center">
                     <a
-                        href="https://en.wikipedia.org/wiki/List_of_86_episodes"
+                        href="https://repository.upnvj.ac.id/"
                         target="_blank"
                     >
                         <img
-                            src="/image/tester.png"
+                            src="/image/home_repository.png"
                             class="img-fluid"
                             alt="Repository"
                         />
                     </a>
                 </div>
 
+                <!-- Library -->
+                <div class="col-4 text-center">
+                    <a
+                        href="https://library.upnvj.ac.id/"
+                        target="_blank"
+                    >
+                        <img
+                            src="/image/home_library.png"
+                            class="img-fluid mb-2"
+                            alt="Library"
+                        />
+                    </a>
+                </div>
+
                 <!-- E-Journal -->
-                <div class="col-4">
-                    <a href="/e-journal" class="text-decoration-none text-dark">
-                        <div class="border text-center p-2 h-100">
-                            <img
-                                src="img/journal.png"
-                                class="img-fluid mb-2"
-                                alt="E-Journal"
-                            />
-                            <div>E-Journal</div>
-                        </div>
+                <div class="col-4 text-center">
+                    <a
+                        href="https://ejournal.upnvj.ac.id/"
+                        target="_blank"
+                    >
+                        <img
+                            src="image/home_ejournal.png"
+                            class="img-fluid mb-2"
+                            alt="E-Journal"
+                        />
                     </a>
                 </div>
 
                 <!-- E-Book -->
-                <div class="col-6">
-                    <a href="/ebook" class="text-decoration-none text-dark">
-                        <div class="border text-center p-2 h-100">
-                            <img
-                                src="img/ebook.png"
-                                class="img-fluid mb-2"
-                                alt="E-Book"
-                            />
-                            <div>Aplikasi E-Book Library UPNVJ</div>
-                        </div>
+                <div class="col-4 text-center">
+                    <a
+                        href="https://kubuku.id/download/library-upn-veteran-jakarta/"
+                        target="_blank"
+                    >
+                        <img
+                            src="/image/home_app.png"
+                            class="img-fluid"
+                            alt="Aplikasi E Book Perpustakaan Upnvj"
+                        />
                     </a>
                 </div>
 
                 <!-- E-Resource -->
-                <div class="col-6">
+                <div class="col-4 text-center">
                     <a
-                        href="/e-resource"
-                        class="text-decoration-none text-dark"
+                        href="/eresource.html"
                     >
-                        <div class="border text-center p-2 h-100">
-                            <img
-                                src="img/resource.png"
-                                class="img-fluid mb-2"
-                                alt="E-Resource"
-                            />
-                            <div>E-Resource</div>
-                        </div>
+                        <img
+                            src="/image/home_eresource.png"
+                            class="img-fluid"
+                            alt="E Resource"
+                        />
+                    </a>
+                </div>
+
+                <div class="col-4 text-center">
+                    <a
+                        href="https://drive.google.com/file/d/1u5qb9KZlPd9iVIaidPtRgd0Kf6sQ0EJ1/view"
+                    >
+                        <img
+                            src="/image/home_opacapp.png"
+                            class="img-fluid"
+                            alt="OPAC APP"
+                        />
                     </a>
                 </div>
             </div>
@@ -196,11 +222,21 @@
             <div class="border p-3 rounded">
                 <h6 class="fw-bold">Cari Panduan?</h6>
                 <ul class="mb-0">
-                    <li href="">
-                        Panduan peminjaman, perpanjangan, dan pengembalian buku
+                    <li>
+                        <a href="/docs/Panduan-akses-Repository-UPNVJ.pdf" class="panduan-link">
+                        Panduan Akses Repository UPNVJ
+                        </a>
                     </li>
-                    <li>Panduan peminjaman ruang diskusi</li>
-                    <li>Panduan peminjaman komputer</li>
+                    <li>
+                        <a href="/docs/Panduan-Aplikasi-E-library-UPN-Veteran-Jakarta.pdf" class="panduan-link">
+                        Panduan Aplikasi E-Library UPNVJ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/docs/Panduan-cara-mengakses-OPAC-Perpustakaan-UPNVJ.pdf" class="panduan-link">
+                        Panduan Akses OPAC Perpustakaan UPNVJ
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

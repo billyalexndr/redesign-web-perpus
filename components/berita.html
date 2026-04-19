@@ -1,20 +1,26 @@
-<div class="container my-5">
+<div class="container my-5 px-4">
+    <div class="row">
+    <div class="col-12 col-xl-11" style="margin-left:150px; margin-right:150;">
     <div class="row">
         <!-- LEFT -->
-        <div class="col-lg-4 mb-4">
-            <h5 class="fw-bold mb-3">Berita Terbaru</h5>
+        <div class="col-lg-6 mb-5">
+            <h4 class="fw-bold mb-4 text-center">BERITA TERBARU</h5>
 
-            <div class="card">
-                <img src="image/tester.png" class="card-img-top" />
-                <div class="card-body">
-                    <h6 class="fw-bold">Judul Berita Utama</h6>
-                    <small class="text-muted">Maret 2026</small>
+            <hr style="border:none; height:3px; background:#458f54; width:480px; margin:10px auto; margin-top: -10px; opacity:1;">
+            <br>
+            <a href="https://www.instagram.com/p/DWk2k03FHFW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="text-decoration-none text-dark">
+                <div class="card hover-card">
+                    <img src="image/berita1.png" class="card-img-top" />
+                    <div class="card-body">
+                        <h6 class="fw-bold">Formulir Usulan Buku</h6>
+                        <small class="text-muted">1 April 2026</small>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
 
         <!-- RIGHT -->
-        <div class="col-lg-8">
+        <div class="col-lg-6">
             <!-- CATEGORY -->
             <div class="d-flex flex-wrap gap-2 mb-4">
                 <button
@@ -25,9 +31,15 @@
                 </button>
                 <button
                     class="btn btn-outline-dark btn-sm btn-category"
+                    data-category="event"
+                >
+                    Event
+                </button>
+                <button
+                    class="btn btn-outline-dark btn-sm btn-category"
                     data-category="buku"
                 >
-                    Artikel Buku
+                    Buku
                 </button>
                 <button
                     class="btn btn-outline-dark btn-sm btn-category"
@@ -52,39 +64,81 @@
             <!-- NEWS -->
             <div class="d-flex flex-column gap-3">
                 <!-- NEW -->
-                <div class="d-flex gap-3 news-item" data-category="pengumuman">
-                    <img
-                        src="https://via.placeholder.com/120x90"
-                        class="rounded"
-                    />
-                    <div>
-                        <h6 class="fw-bold mb-1">Berita Kampus Terbaru</h6>
-                        <small class="text-muted">Maret 2026</small>
+                 <a href="https://www.instagram.com/p/DWk2k03FHFW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                    <div class="d-flex gap-2 news-item" data-category="buku">
+                        <img src="image/berita1.png" class="rounded" style="width: 150px; height: 75px; object-fit: cover;" />
+                        <div>
+                            <h6 class="fw-bold mb-1">Formulir Usulan Buku</h6>
+                            <small class="text-muted">1 April 2026</small>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="d-flex gap-3 news-item" data-category="buku">
-                    <img
-                        src="https://via.placeholder.com/120x90"
-                        class="rounded"
-                    />
-                    <div>
-                        <h6 class="fw-bold mb-1">Rekomendasi Buku</h6>
-                        <small class="text-muted">Februari 2026</small>
+                <a href="https://www.instagram.com/p/DWTDKHwlFD8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                    <div class="d-flex gap-2 news-item" data-category="berita">
+                        <img src="image/berita_berita1.png" class="rounded" style="width: 150px; height: 75px; object-fit: cover;" />
+                        <div>
+                            <h6 class="fw-bold mb-1">Akses E-Book UPNVJ</h6>
+                            <small class="text-muted">25 Maret 2026</small>
+                        </div>
                     </div>
-                </div>
+                </a>
+                
+                <a href="https://www.instagram.com/p/DVcmMRsDyk2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="text-decoration-none text-dark">
+                    <div class="d-flex gap-2 news-item" data-category="event">
+                        <img src="image/berita_event1.png" class="rounded" style="width: 150px; height: 75px; object-fit: cover;" />
+                        <div>
+                            <h6 class="fw-bold mb-1">Webinar</h6>
+                            <small class="text-muted">4 Maret 2026</small>
+                        </div>
+                    </div>
+                </a>
 
-                <div class="d-flex gap-3 news-item" data-category="pengumuman">
-                    <img
-                        src="https://via.placeholder.com/120x90"
-                        class="rounded"
-                    />
-                    <div>
-                        <h6 class="fw-bold mb-1">Pengumuman Libur</h6>
-                        <small class="text-muted">Januari 2026</small>
+                <!--
+                <a href="https://www.instagram.com/p/DUpoT32jwbV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                    <div class="d-flex gap-2 news-item" data-category="event">
+                        <img src="image/berita_event2.png" class="rounded" style="width: 150px; height: 75px; object-fit: cover;" />
+                        <div>
+                            <h6 class="fw-bold mb-1">Kelas Repository (KERIS)</h6>
+                            <small class="text-muted">12 Februari 2026</small>
+                        </div>
                     </div>
-                </div>
+                </a>
+                --->
+
+                <a href="https://www.instagram.com/p/DThmn8tlMVk/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                    <div class="d-flex gap-2 news-item" data-category="buku">
+                        <img src="image/berita_buku1.png" class="rounded" style="width: 150px; height: 75px; object-fit: cover;" />
+                        <div>
+                            <h6 class="fw-bold mb-1">Koleksi Buku Populer</h6>
+                            <small class="text-muted">15 Januari 2026</small>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DV7YkamD6MM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                    <div class="d-flex gap-2 news-item" data-category="pengumuman">
+                        <img src="image/berita_pengumuman1.png" class="rounded" style="width: 150px; height: 75px; object-fit: cover;" />
+                        <div>
+                            <h6 class="fw-bold mb-1">Pengumuman Jadwal Layanan</h6>
+                            <small class="text-muted">16 Maret 2026</small>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DWIMzlFj_kA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                    <div class="d-flex gap-2 news-item" data-category="peringatan">
+                        <img src="image/berita_peringatan1.png" class="rounded" style="width: 150px; height: 75px; object-fit: cover;" />
+                        <div>
+                            <h6 class="fw-bold mb-1">Hari Raya Idul Fitri 1447 H</h6>
+                            <small class="text-muted">21 Maret 2026</small>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </div>

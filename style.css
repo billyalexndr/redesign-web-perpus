@@ -1,15 +1,19 @@
 body {
     padding-top: 80px;
+    color: #000 !important;
 }
 
-/* Banner styling */
 .banner {
-    background: url('image/banner.png') center/cover no-repeat;
+    background: 
+        linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)),
+        url('image/banner2.png') center/cover no-repeat;
     height: 300px;
 }
 
 .banner-home {
-    background: url('image/banner.png') center/cover no-repeat;
+    background: 
+        linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)),
+        url('image/banner2.png') center/cover no-repeat;
     height: 100vh;
 }
 
@@ -41,17 +45,92 @@ body {
     font-size: 20px;
 }
 
-.fb {
-    background: #3b5998;
+#socialFloating .btn:focus {
+    box-shadow: none;
 }
-.tw {
-    background: #1da1f2;
+
+/* Facebook */
+.facebook:hover,
+.facebook:active {
+    background-color: #1877f2 !important;
+    border-color: #1877f2 !important;
+    color: #fff !important;
 }
-.yt {
-    background: #ff0000;
+
+/* Instagram */
+.instagram:hover,
+.instagram:active {
+    background: linear-gradient(45deg, #b03898, #d14c6b) !important;
+    border-color: #e1306c !important;
+    color: #fff !important;
 }
-.ig {
-    background: #c13584;
+
+/* YouTube */
+.youtube:hover,
+.youtube:active {
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important;
+    color: #fff !important;
+}
+
+/* Twitter/X */
+.twitter:hover,
+.twitter:active {
+    background-color: #1da1f2 !important;
+    border-color: #1da1f2 !important;
+    color: #fff !important;
+}
+
+/* TikTok */
+.tiktok:hover,
+.tiktok:active {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+    color: #fff !important;
+}
+
+/* TARGET SEMUA LINK NAVBAR */
+.navbar-nav .nav-link,
+.navbar-nav .nav-link:link,
+.navbar-nav .nav-link:visited,
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link:focus-visible {
+    color: #333 !important;
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* HOVER */
+.navbar-nav .nav-link:hover {
+    color: #458f54 !important;
+}
+
+/* ACTIVE */
+.navbar-nav .nav-link.active {
+    color: #458f54 !important;
+}
+
+/* DROPDOWN SAAT DIBUKA */
+.navbar-nav .show > .nav-link {
+    color: #458f54 !important;
+}
+
+/* UNDERLINE */
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #458f54;
 }
 
 .operasional {
@@ -73,9 +152,10 @@ body {
 
 /* ITEM */
 .layanan-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1.6px solid #e2e2e2;
 }
 
+/* Default */
 .layanan-header {
     display: flex;
     justify-content: space-between;
@@ -84,8 +164,25 @@ body {
     background: #fff;
 }
 
+/* Saat ACTIVE (klik) */
+.layanan-item.active .layanan-header {
+    background-color: #198754; 
+    color: #fff;
+    border-color: #198754;
+}
+
+/* Hover */
 .layanan-header:hover {
-    background: #f5f5f5;
+    background-color: #198754;
+    color: #fff;
+    border-color: #198754;
+}
+
+/* Hover semua button jadi hijau */
+.layanan-header:hover {
+    background-color: #198754;
+    color: #fff;
+    border-color: #198754;
 }
 
 /* BODY (HIDDEN) */
@@ -95,9 +192,11 @@ body {
     background: #fafafa;
 }
 
-/* ACTIVE */
+/* Body saat active */
 .layanan-item.active .layanan-body {
     display: block;
+    background-color: #f8f8f6;
+    color: #0e0d0d; 
 }
 
 .layanan-item.active .icon {
@@ -118,7 +217,7 @@ table td i {
 }
 
 .fasilitas-card {
-    border: 1px solid #ddd;
+    border: 1.5px solid #198754;
     padding: 20px;
     border-radius: 8px;
     height: 100%;
@@ -220,36 +319,122 @@ a img:hover {
 }
 
 .search-btn.active {
-    background-color: #0d6efd;
-    color: #fff;
-    border-color: #0d6efd;
+    background-color: #e3af21;
+    color: #100f0f;
+    border-color: #edf0ee;
 }
 
+/* CONTAINER */
 .search-group {
     display: flex;
     overflow: hidden;
     border-radius: 8px;
-    border: 1px solid #fff;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* RESET BUTTON */
+/* BUTTON DEFAULT */
 .search-group .btn {
     flex: 1;
     border: none;
     border-radius: 0;
     background: transparent;
-    color: #fff;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+/* OVERRIDE TOTAL BOOTSTRAP */
+.search-group .btn,
+.search-group .btn:focus,
+.search-group .btn:active,
+.search-group .btn:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* MATIIN STYLE btn-outline-light */
+.search-group .btn-outline-light {
+    color: #333 !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* SAAT DIKLIK */
+.search-group .btn:active {
+    background-color: #e3af21 !important;
+    color: #181818 !important;
 }
 
 /* ACTIVE */
 .search-group .btn.active {
-    background: #0d6efd;
-    color: #fff;
+    background-color: #e3af21 !important;
+    color: #100f0f !important;
 }
 
 /* HOVER */
 .search-group .btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: #f2f2f2;
+}
+
+/* PEMISAH */
+.search-group .btn:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+/* WRAPPER */
+.input-group {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* INPUT */
+.input-group .form-control {
+    border: none;
+    font-family: inherit;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* PLACEHOLDER */
+.input-group .form-control::placeholder {
+    color: #999;
+}
+
+/* BUTTON */
+.input-group .btn {
+    border: none;
+    background: #e3af21;
+    color: #111010;
+    font-weight: 500;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+}
+
+/* HOVER */
+.input-group .btn:hover {
+    background: #e3af21;
+}
+
+/* CLICK */
+.input-group .btn:active {
+    transform: scale(0.97);
+}
+
+/* REMOVE STYLE BOOTSTRAP */
+.input-group .form-control:focus,
+.input-group .btn:focus,
+.input-group .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* EFFECT FOCUS */
+.input-group:focus-within {
+    box-shadow: 0 0 0 2px rgba(69, 143, 84, 0.3);
 }
 
 #socialFloating {
@@ -279,4 +464,282 @@ a img:hover {
     width: 45px;
     height: 45px;
     padding: 0;
+}
+
+.col-4 a img {
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.col-4 a:hover img {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.panduan-link {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.panduan-link:hover {
+  color: #e3af21;
+  transform: translateX(5px);
+}
+
+.hover-news {
+    transition: 0.2s;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.hover-news:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.hover-news img {
+    transition: 0.2s;
+}
+
+.hover-news:hover img {
+    transform: scale(1.05);
+}
+
+/* DEFAULT */
+.btn-outline-primary {
+    color: #080808 !important;
+    border-color: #1c1c1c !important;
+    background-color: transparent !important;
+}
+
+/* HOVER */
+.btn-outline-primary:hover {
+    color: #181717 !important;
+    background-color: #e3af21 !important;
+    border-color: #e3af21 !important;
+    font-weight: bold;
+}
+
+/* ACTIVE (klik) */
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.show > .btn-outline-primary.dropdown-toggle {
+    color: #0f0f0f !important;
+    background-color: #e3af21 !important;
+    border-color: #e3af21 !important;
+}
+
+/* FOCUS */
+.btn-outline-primary:focus,
+.btn-outline-primary:focus-visible {
+    color: #141313 !important;
+    background-color: #e3af21 !important;
+    border-color: #e3af21 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Default item */
+.dropdown-menu .dropdown-item {
+    color: #000;
+}
+
+/* Hover & focus */
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background-color: #e3af21 !important;
+    color: #121111;
+}
+
+/* Active */
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active {
+    background-color: #e3af21 !important;
+    color: #1e1d1d;
+}
+
+/* Button Tata Tertib dan Layanan*/
+.btn-kategori.active {
+    background-color: #198754 !important;
+    color: #fff;
+    border-color: #198754 !important;
+}
+
+/* Hover semua button */
+.btn-kategori:hover {
+    background-color: #198754 !important;
+    color: #fff;
+    border-color: #198754 !important;
+}
+
+/* Saat diklik */
+.btn-kategori.active,
+.btn-kategori:active {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: #fff !important;
+}
+
+/* Button Layanan*/
+.btn-layanan.active {
+    background-color: #198754 !important;
+    color: #fff;
+    border-color: #198754 !important;
+}
+
+/* Hover */
+.btn-layanan:hover {
+    background-color: #198754 !important;
+    color: #fff;
+    border-color: #198754 !important;
+}
+
+/* Saat diklik */
+.btn-layanan.active,
+.btn-layanan:active {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: #fff !important;
+}
+
+/* Button E-Dokumen */
+.btn-edok.active {
+    background-color: #198754 !important;
+    color: #fff;
+    border-color: #198754 !important;
+}
+
+/* Hover button */
+.btn-edok:hover {
+    background-color: #198754 !important;
+    color: #fff;
+    border-color: #198754 !important;
+}
+
+/* Saat diklik */
+.btn-edok.active,
+.btn-edok:active {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: #fff !important;
+}
+
+.btn-download {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+}
+
+.btn-download:hover {
+    background-color: #198754 !important;
+    color: #fff !important;
+    border: 1px solid #198754 !important;
+    font-weight: bold;
+}
+
+.btn-download.active {
+    background-color: #198754 !important;
+    color: #fff !important;
+    border: 1px solid #198754 !important;
+    font-weight: bold;
+}
+
+/* Default semua button */
+.btn-category {
+    transition: all 0.3s ease;
+}
+
+/* Hover jadi hijau */
+.btn-category:hover {
+    background-color: #198754 !important;
+    color: #fff !important;
+    border-color: #198754 !important;
+    font-weight: bold;
+}
+
+/* Active */
+.btn-category.active {
+    box-shadow: 0 4px 10px rgba(25, 135, 84, 0.2);
+    background-color: #198754 !important;
+    color: #fff !important;
+    border-color: #198754 !important;
+    font-weight: bold;
+}
+
+/* Remove efek klik bootstrap */
+.btn-category:focus {
+    box-shadow: none !important;
+}
+
+.header-jam {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.header-jam:hover {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* Saat aktif */
+.header-jam:not(.collapsed) {
+    background-color: #ffc107;
+    color: #000;
+}
+
+/* Remove efek default */
+.header-jam:focus {
+    box-shadow: none;
+}
+
+/* DEFAULT */
+.accordion-button {
+    background-color: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+}
+
+/* HOVER */
+.accordion-button:hover {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+/* ACTIVE */
+.accordion-button:not(.collapsed) {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+    box-shadow: none !important;
+}
+
+/* REMOVE FOCUS BIRU */
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+
+/* Button E-Resource*/
+.btn-eresource.active {
+    background-color: #198754 !important;
+    color: #fff;
+    border-color: #198754 !important;
+}
+
+/* Hover button */
+.btn-eresource:hover {
+    background-color: #198754 !important;
+    color: #fff;
+    border-color: #198754 !important;
+}
+
+/* Saat diklik */
+.btn-eresource.active,
+.btn-eresource:active {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: #fff !important;
 }
