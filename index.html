@@ -16,57 +16,831 @@
     </head>
 
     <body>
-        <body>
-            <div id="navbar"></div>
-            <div class="banner-home d-flex align-items-center">
-                <div class="w-100 px-4">
-                    <div class="mx-auto" style="max-width: 650px; margin-top: 80px">
-                        <!-- Buttons -->
-                        <div class="search-group mb-3">
-                            <button
-                                class="btn btn-outline-light search-btn active"
-                                data-type="library"
+        <div id="navbar"></div>
+        <div class="banner-home d-flex align-items-center">
+            <div class="w-100 px-4">
+                <div class="mx-auto" style="max-width: 650px; margin-top: 80px">
+                    <!-- Buttons -->
+                    <div class="search-group mb-3">
+                        <button
+                            class="btn btn-outline-light search-btn active"
+                            data-type="library"
+                        >
+                            Library
+                        </button>
+                        <button
+                            class="btn btn-outline-light search-btn"
+                            data-type="repository"
+                        >
+                            Repository
+                        </button>
+                        <button
+                            class="btn btn-outline-light search-btn"
+                            data-type="ejournal"
+                        >
+                            E-Journal
+                        </button>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="input-group">
+                        <input
+                            id="searchInput"
+                            type="text"
+                            class="form-control"
+                            placeholder="Masukkan kata kunci pencarian..."
+                        />
+                        <button id="searchBtn" class="btn btn-dark">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFORMASI -->
+        <div class="container my-5 position-relative" id="infoSection">
+            <div class="row g-4">
+                <!-- SOCIAL MEDIA -->
+                <div id="socialFloating">
+                    <div class="social-wrapper d-flex flex-column gap-2">
+                        <a
+                            href="https://www.facebook.com/perpustakaanupnvj"
+                            target="_blank"
+                            class="btn btn-outline-dark facebook"
+                        >
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/perpustakaanupnvj/"
+                            target="_blank"
+                            class="btn btn-outline-dark instagram"
+                        >
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a
+                            href="https://www.youtube.com/channel/UCJ3wVQRnxl5LBKNDBmx4lYQ"
+                            target="_blank"
+                            class="btn btn-outline-dark youtube"
+                        >
+                            <i class="bi bi-youtube"></i>
+                        </a>
+
+                        <a
+                            href="https://x.com/upnvj_library"
+                            target="_blank"
+                            class="btn btn-outline-dark tiktok"
+                        >
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+
+                        <a
+                            href="https://www.tiktok.com/@perpustakaanupnvj"
+                            target="_blank"
+                            class="btn btn-outline-dark twitter"
+                        >
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BAGIAN TENGAH -->
+                <div class="col-12 col-lg-7">
+                    <!-- TOP BUTTON -->
+                    <div class="d-flex gap-3 mb-3 flex-wrap">
+                        <a
+                            href="https://wa.me/085811591970"
+                            class="btn btn-outline-primary w-100"
+                            target="_blank"
+                            style="position: relative; z-index: 100"
+                        >
+                            Hubungi Admin Perpustakaan
+                        </a>
+                    </div>
+
+                    <!-- JAM OPERASIONAL -->
+                    <div class="border p-3 rounded" id="jamOperasional">
+                        <h6 class="fw-bold mb-3">Jam Operasional</h6>
+
+                        <!-- NORMAL -->
+                        <div class="border mb-2">
+                            <div
+                                class="d-flex justify-content-between p-2 header-jam collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#normal"
                             >
-                                Library
-                            </button>
-                            <button
-                                class="btn btn-outline-light search-btn"
-                                data-type="repository"
+                                <span>Kondisi Normal</span>
+                                <i class="bi bi-chevron-right arrow"></i>
+                            </div>
+
+                            <div
+                                id="normal"
+                                class="collapse"
+                                data-bs-parent="#jamOperasional"
                             >
-                                Repository
-                            </button>
-                            <button
-                                class="btn btn-outline-light search-btn"
-                                data-type="ejournal"
-                            >
-                                E-Journal
-                            </button>
+                                <div class="p-2 border-top">
+                                    Senin - Kamis: 07.30 - 19.00 WIB <br />
+                                    Jumat: 07.30 - 19.30 WIB <br />
+                                    Sabtu: 08.00 - 12.00 WIB <br />
+                                    Minggu & Hari Libur Nasional : Tutup
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Search -->
-                        <div class="input-group">
-                            <input
-                                id="searchInput"
-                                type="text"
-                                class="form-control"
-                                placeholder="Masukkan kata kunci pencarian..."
-                            />
-                            <button id="searchBtn" class="btn btn-dark">
-                                Search
-                            </button>
+                        <!-- PENYESUAIAN -->
+                        <div class="border mb-2">
+                            <div
+                                class="d-flex justify-content-between p-2 header-jam collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#penyesuaian"
+                            >
+                                <span>Kondisi Penyesuaian</span>
+                                <i class="bi bi-chevron-right arrow"></i>
+                            </div>
+
+                            <div
+                                id="penyesuaian"
+                                class="collapse"
+                                data-bs-parent="#jamOperasional"
+                            >
+                                <div class="p-2 border-top">
+                                    Senin s.d Kamis: 07:30 – 16:00 WIB <br />
+                                    Jum’at : 07:30 -16:30 WIB <br />
+                                    Sabtu : Tutup <br />
+                                    Minggu & Hari Libur Nasional : Tutup <br />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RAMADHAN -->
+                        <div class="border">
+                            <div
+                                class="d-flex justify-content-between p-2 header-jam collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#ramadhan"
+                            >
+                                <span>Bulan Ramadhan</span>
+                                <i class="bi bi-chevron-right arrow"></i>
+                            </div>
+
+                            <div
+                                id="ramadhan"
+                                class="collapse"
+                                data-bs-parent="#jamOperasional"
+                            >
+                                <div class="p-2 border-top">
+                                    Senin s.d Kamis: 08:00 – 15:00 WIB <br />
+                                    Jum’at : 08:00 - 15:30 WIB <br />
+                                    Sabtu : Tutup <br />
+                                    Minggu & Hari Libur Nasional : Tutup <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN KANAN -->
+                <div class="col-12 col-lg-5">
+                    <!-- CTA utama -->
+                    <div class="d-flex gap-3 mb-3 flex-wrap">
+                        <a
+                            href="https://wa.me/6281234567890"
+                            class="btn btn-outline-primary w-100"
+                            target="_blank"
+                            style="position: relative; z-index: 100"
+                        >
+                            Reservasi Ruangan
+                        </a>
+                    </div>
+
+                    <!-- Grid Menu -->
+                    <div class="row g-3">
+                        <!-- Repository -->
+                        <div class="col-4 text-center">
+                            <a
+                                href="https://repository.upnvj.ac.id/"
+                                target="_blank"
+                            >
+                                <img
+                                    src="/image/home_repository.png"
+                                    class="img-fluid"
+                                    alt="Repository"
+                                />
+                            </a>
+                        </div>
+
+                        <!-- Library -->
+                        <div class="col-4 text-center">
+                            <a
+                                href="https://library.upnvj.ac.id/"
+                                target="_blank"
+                            >
+                                <img
+                                    src="/image/home_library.png"
+                                    class="img-fluid mb-2"
+                                    alt="Library"
+                                />
+                            </a>
+                        </div>
+
+                        <!-- E-Journal -->
+                        <div class="col-4 text-center">
+                            <a
+                                href="https://ejournal.upnvj.ac.id/"
+                                target="_blank"
+                            >
+                                <img
+                                    src="image/home_ejournal.png"
+                                    class="img-fluid mb-2"
+                                    alt="E-Journal"
+                                />
+                            </a>
+                        </div>
+
+                        <!-- E-Book -->
+                        <div class="col-4 text-center">
+                            <a
+                                href="https://kubuku.id/download/library-upn-veteran-jakarta/"
+                                target="_blank"
+                            >
+                                <img
+                                    src="/image/home_app.png"
+                                    class="img-fluid"
+                                    alt="Aplikasi E Book Perpustakaan Upnvj"
+                                />
+                            </a>
+                        </div>
+
+                        <!-- E-Resource -->
+                        <div class="col-4 text-center">
+                            <a href="/eresource.html">
+                                <img
+                                    src="/image/home_eresource.png"
+                                    class="img-fluid"
+                                    alt="E Resource"
+                                />
+                            </a>
+                        </div>
+
+                        <div class="col-4 text-center">
+                            <a
+                                href="https://drive.google.com/file/d/1u5qb9KZlPd9iVIaidPtRgd0Kf6sQ0EJ1/view"
+                            >
+                                <img
+                                    src="/image/home_opacapp.png"
+                                    class="img-fluid"
+                                    alt="OPAC APP"
+                                />
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="informasi"></div>
-            <div id="berita"></div>
-            <div id="faq"></div>
-            <div id="video"></div>
-            <div id="footer"></div>
+            <!-- PANDUAN -->
+            <div class="row mt-4">
+                <div class="col-lg-8">
+                    <div class="border p-3 rounded">
+                        <h6 class="fw-bold">Cari Panduan?</h6>
+                        <ul class="mb-0">
+                            <li>
+                                <a
+                                    href="/docs/Panduan-akses-Repository-UPNVJ.pdf"
+                                    class="panduan-link"
+                                >
+                                    Panduan Akses Repository UPNVJ
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/docs/Panduan-Aplikasi-E-library-UPN-Veteran-Jakarta.pdf"
+                                    class="panduan-link"
+                                >
+                                    Panduan Aplikasi E-Library UPNVJ
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/docs/Panduan-cara-mengakses-OPAC-Perpustakaan-UPNVJ.pdf"
+                                    class="panduan-link"
+                                >
+                                    Panduan Akses OPAC Perpustakaan UPNVJ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <script src="script.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        </body>
+        <!-- BERITA -->
+        <div class="container my-5 px-4">
+            <div class="row">
+                <div
+                    class="col-12 col-xl-11"
+                    style="margin-left: 150px; margin-right: 150px"
+                >
+                    <div class="row">
+                        <!-- LEFT -->
+                        <div class="col-lg-6 mb-5">
+                            <h4 class="fw-bold mb-4 text-center">
+                                BERITA TERBARU
+                            </h4>
+
+                            <hr
+                                style="
+                                    border: none;
+                                    height: 3px;
+                                    background: #458f54;
+                                    width: 480px;
+                                    margin: 10px auto;
+                                    margin-top: -10px;
+                                    opacity: 1;
+                                "
+                            />
+                            <br />
+                            <a
+                                href="https://www.instagram.com/p/DWk2k03FHFW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                target="_blank"
+                                class="text-decoration-none text-dark"
+                            >
+                                <div class="card hover-card">
+                                    <img
+                                        src="image/berita1.png"
+                                        class="card-img-top"
+                                    />
+                                    <div class="card-body">
+                                        <h6 class="fw-bold">
+                                            Formulir Usulan Buku
+                                        </h6>
+                                        <small class="text-muted"
+                                            >1 April 2026</small
+                                        >
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- RIGHT -->
+                        <div class="col-lg-6">
+                            <!-- CATEGORY -->
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <button
+                                    class="btn btn-dark btn-sm btn-category active"
+                                    data-category="all"
+                                >
+                                    All
+                                </button>
+                                <button
+                                    class="btn btn-outline-dark btn-sm btn-category"
+                                    data-category="event"
+                                >
+                                    Event
+                                </button>
+                                <button
+                                    class="btn btn-outline-dark btn-sm btn-category"
+                                    data-category="buku"
+                                >
+                                    Buku
+                                </button>
+                                <button
+                                    class="btn btn-outline-dark btn-sm btn-category"
+                                    data-category="berita"
+                                >
+                                    Berita
+                                </button>
+                                <button
+                                    class="btn btn-outline-dark btn-sm btn-category"
+                                    data-category="peringatan"
+                                >
+                                    Hari Peringatan
+                                </button>
+                                <button
+                                    class="btn btn-outline-dark btn-sm btn-category"
+                                    data-category="pengumuman"
+                                >
+                                    Pengumuman
+                                </button>
+                            </div>
+
+                            <!-- NEWS -->
+                            <div class="d-flex flex-column gap-3">
+                                <!-- NEW -->
+                                <a
+                                    href="https://www.instagram.com/p/DWk2k03FHFW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-decoration-none text-dark"
+                                >
+                                    <div
+                                        class="d-flex gap-2 news-item"
+                                        data-category="buku"
+                                    >
+                                        <img
+                                            src="image/berita1.png"
+                                            class="rounded"
+                                            style="
+                                                width: 150px;
+                                                height: 75px;
+                                                object-fit: cover;
+                                            "
+                                        />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">
+                                                Formulir Usulan Buku
+                                            </h6>
+                                            <small class="text-muted"
+                                                >1 April 2026</small
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="https://www.instagram.com/p/DWTDKHwlFD8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-decoration-none text-dark"
+                                >
+                                    <div
+                                        class="d-flex gap-2 news-item"
+                                        data-category="berita"
+                                    >
+                                        <img
+                                            src="image/berita_berita1.png"
+                                            class="rounded"
+                                            style="
+                                                width: 150px;
+                                                height: 75px;
+                                                object-fit: cover;
+                                            "
+                                        />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">
+                                                Akses E-Book UPNVJ
+                                            </h6>
+                                            <small class="text-muted"
+                                                >25 Maret 2026</small
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="https://www.instagram.com/p/DVcmMRsDyk2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                    target="_blank"
+                                    class="text-decoration-none text-dark"
+                                >
+                                    <div
+                                        class="d-flex gap-2 news-item"
+                                        data-category="event"
+                                    >
+                                        <img
+                                            src="image/berita_event1.png"
+                                            class="rounded"
+                                            style="
+                                                width: 150px;
+                                                height: 75px;
+                                                object-fit: cover;
+                                            "
+                                        />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">
+                                                Webinar
+                                            </h6>
+                                            <small class="text-muted"
+                                                >4 Maret 2026</small
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!--
+                <a href="https://www.instagram.com/p/DUpoT32jwbV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+                    <div class="d-flex gap-2 news-item" data-category="event">
+                        <img src="image/berita_event2.png" class="rounded" style="width: 150px; height: 75px; object-fit: cover;" />
+                        <div>
+                            <h6 class="fw-bold mb-1">Kelas Repository (KERIS)</h6>
+                            <small class="text-muted">12 Februari 2026</small>
+                        </div>
+                    </div>
+                </a>
+                --->
+
+                                <a
+                                    href="https://www.instagram.com/p/DThmn8tlMVk/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-decoration-none text-dark"
+                                >
+                                    <div
+                                        class="d-flex gap-2 news-item"
+                                        data-category="buku"
+                                    >
+                                        <img
+                                            src="image/berita_buku1.png"
+                                            class="rounded"
+                                            style="
+                                                width: 150px;
+                                                height: 75px;
+                                                object-fit: cover;
+                                            "
+                                        />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">
+                                                Koleksi Buku Populer
+                                            </h6>
+                                            <small class="text-muted"
+                                                >15 Januari 2026</small
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="https://www.instagram.com/p/DV7YkamD6MM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-decoration-none text-dark"
+                                >
+                                    <div
+                                        class="d-flex gap-2 news-item"
+                                        data-category="pengumuman"
+                                    >
+                                        <img
+                                            src="image/berita_pengumuman1.png"
+                                            class="rounded"
+                                            style="
+                                                width: 150px;
+                                                height: 75px;
+                                                object-fit: cover;
+                                            "
+                                        />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">
+                                                Pengumuman Jadwal Layanan
+                                            </h6>
+                                            <small class="text-muted"
+                                                >16 Maret 2026</small
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a
+                                    href="https://www.instagram.com/p/DWIMzlFj_kA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-decoration-none text-dark"
+                                >
+                                    <div
+                                        class="d-flex gap-2 news-item"
+                                        data-category="peringatan"
+                                    >
+                                        <img
+                                            src="image/berita_peringatan1.png"
+                                            class="rounded"
+                                            style="
+                                                width: 150px;
+                                                height: 75px;
+                                                object-fit: cover;
+                                            "
+                                        />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">
+                                                Hari Raya Idul Fitri 1447 H
+                                            </h6>
+                                            <small class="text-muted"
+                                                >21 Maret 2026</small
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <!-- <div id="faq"></div> -->
+        <div class="container my-5">
+            <h4 class="fw-bold mb-4 text-center">
+                FREQUENTLY ASKED QUESTIONS (FAQ)
+            </h4>
+
+            <hr
+                style="
+                    border: none;
+                    height: 3px;
+                    background: #458f54;
+                    width: 580px;
+                    margin: 10px auto;
+                    margin-top: -10px;
+                    opacity: 1;
+                "
+            />
+            <br />
+
+            <div class="accordion" id="faqAccordion">
+                <!-- ITEM 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq1"
+                        >
+                            Bagaimana cara download aplikasi E-book Library UPN
+                            Veteran Jakarta?
+                        </button>
+                    </h2>
+                    <div
+                        id="faq1"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion"
+                    >
+                        <div class="accordion-body">
+                            Aplikasi E-book Library UPN “Veteran” Jakarta
+                            tersedia pada versi android, ios, windows, dan
+                            MacOS.<br /><br />
+                            <ul>
+                                <li>
+                                    Untuk versi android : Kamu dapat mencari
+                                    pada playstore, ketikkan “library UPNVJ”
+                                    pada kolom pencarian
+                                </li>
+                                <li>
+                                    Untuk versi IOS : Kamu dapat mencari pada
+                                    Appstore ketikkan “e-library upn veteran
+                                    jakarta” pada kolom pencarian
+                                </li>
+                                <li>
+                                    Untuk versi windows : Kamu dapat download
+                                    aplikasi pada link berikut :
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq2"
+                        >
+                            Bagaimana cara login E-book Library UPNVJ?
+                        </button>
+                    </h2>
+                    <div
+                        id="faq2"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion"
+                    >
+                        <div class="accordion-body">
+                            Mahasiswa/Dosen/Tendik sudah otomatis didaftarkan
+                            akun oleh Perpustakaan. Ikuti langkah berikut untuk
+                            mengetahui akses akunmu?<br /><br />
+                            <ol>
+                                <li>Cek Email</li>
+                                <ul>
+                                    <li>
+                                        Dosen/tendik : buka email yang terdata
+                                        di akun http://sim.upnvj.ac.id
+                                    </li>
+                                    <li>
+                                        Mahasiswa : buka email yang terdata di
+                                        akun https://akademik.upnvj.ac.id/
+                                    </li>
+                                </ul>
+                                <li>Lakukan Pencarian</li>
+                                <ul>
+                                    <li>
+                                        Pada kotak pencarian di email, ketik
+                                        kata “kubuku” atau “library” lalu enter
+                                        untuk mencari
+                                    </li>
+                                </ul>
+                                <li>Buka Email dari kubuku</li>
+                                <ul>
+                                    <li>
+                                        Buka email dari kubuku untuk meilhat
+                                        user dan password untuk login pada
+                                        aplikasi E-book Library UPN Veteran
+                                        Jakarta
+                                    </li>
+                                </ul>
+                            </ol>
+                            Jika terdapat kendala dalam akses login akun silakan
+                            hubungi dm ig @perpustakaanupnvj
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq3"
+                        >
+                            Apa saja fitur membaca yang tersedia pada E-book
+                            Library UPNVJ?
+                        </button>
+                    </h2>
+                    <div
+                        id="faq3"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion"
+                    >
+                        <div class="accordion-body">
+                            Night Mode/Day Mode, Discussion, Text Select untuk
+                            meng-copy teks, Text Highlight, Text Underline, Text
+                            Strike, Ink Tools, Add comment, Vertical/Horizontal
+                            Scroll, Flip Mode/Thumbnail Mode
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq4"
+                        >
+                            Ada Berapa banyak judul koleksi E-book yang
+                            tersedia?
+                        </button>
+                    </h2>
+                    <div
+                        id="faq4"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#faqAccordion"
+                    >
+                        <div class="accordion-body">
+                            Total E-book yang tersedia di Aplikasi Library UPN
+                            Veteran Jakarta adalah 897 judul buku
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VIDEO -->
+        <!-- <div id="video"></div> -->
+        <div class="container my-5 text-center">
+            <h4 class="fw-bold mb-4 text-center">VIDEO PLAYLIST</h4>
+
+            <hr
+                style="
+                    border: none;
+                    height: 4px;
+                    background: #458f54;
+                    width: 350px;
+                    margin: 10px auto;
+                    margin-top: -10px;
+                    opacity: 1;
+                "
+            />
+            <br />
+
+            <!-- VIDEO -->
+            <div
+                class="ratio ratio-16x9 mb-4"
+                style="max-width: 700px; margin: 0 auto"
+            >
+                <iframe
+                    src="https://www.youtube.com/embed/2Lm5v_DRP1U"
+                    title="YouTube video"
+                    allowfullscreen
+                >
+                </iframe>
+            </div>
+            <br />
+            <!-- IMAGE ROW -->
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <img src="image/atasfooter.png" class="img-fluid rounded" />
+                </div>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

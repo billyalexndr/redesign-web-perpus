@@ -223,7 +223,7 @@ const layananData = {
                 title: "Peminjaman Buku",
                 desc: {
                     type: "image",
-                   // text: "Proses peminjaman buku",
+                    // text: "Proses peminjaman buku",
                     src: "/image/peminjaman_buku.jpg",
                 }
             },
@@ -231,7 +231,7 @@ const layananData = {
                 title: "Perpanjangan Buku",
                 desc: {
                     type: "image",
-                   // text: "Proses perpanjangan buku",
+                    // text: "Proses perpanjangan buku",
                     src: "/image/perpanjangan_buku.jpg"
                 }
             },
@@ -239,7 +239,7 @@ const layananData = {
                 title: "Pengembalian Buku",
                 desc: {
                     type: "image",
-                   // text: "Proses pengembalian buku",
+                    // text: "Proses pengembalian buku",
                     src: "/image/pengembalian_buku.jpg"
                 }
             },
@@ -247,7 +247,7 @@ const layananData = {
                 title: "Peminjaman Komputer",
                 desc: {
                     type: "image",
-                   // text: "Proses peminjaman komputer",
+                    // text: "Proses peminjaman komputer",
                     src: "/image/peminjaman_komputer.jpg"
                 }
             },
@@ -255,7 +255,7 @@ const layananData = {
                 title: "Peminjaman Ruang Diskusi",
                 desc: {
                     type: "image",
-                   // text: "Proses peminjaman ruang diskusi",
+                    // text: "Proses peminjaman ruang diskusi",
                     src: "/image/peminjaman_ruangdiskusi.jpg"
                 }
             }
@@ -283,7 +283,7 @@ const layananData = {
                 title: "Rekomendasi Buku",
                 desc: {
                     type: "image",
-                   // text: "Informasi rekomendasi buku.",
+                    // text: "Informasi rekomendasi buku.",
                     src: "/image/rekomendasi_buku.jpg"
                 }
             },
@@ -291,7 +291,7 @@ const layananData = {
                 title: "Ulasan Buku",
                 desc: {
                     type: "image",
-                   // text: "Informasi ringkasan dan evaluasi isi buku.",
+                    // text: "Informasi ringkasan dan evaluasi isi buku.",
                     src: "/image/ulasan_buku.jpg"
                 }
             }
@@ -341,7 +341,7 @@ const layananData = {
                 title: "Pencarian Koleksi",
                 desc: {
                     type: "image",
-                   // text: "OPAC (Untuk Pencarian Koleksi Lebih Cepat)",
+                    // text: "OPAC (Untuk Pencarian Koleksi Lebih Cepat)",
                     src: "/image/pencarian_koleksi.jpg"
                 }
             },
@@ -483,8 +483,8 @@ const tatibData = {
                     <li>Anggota yang masih mempunyai tanggungan peminjaman tidak dapat meminjam buku sebelum buku tersebut dikembalikan</li>
                 </ol>
                         `
-            },
-        keanggotaan: {
+    },
+    keanggotaan: {
         deskripsi: `
             <h2 class="text-center">KEANGGOTAAN</h2>
             <hr style="border:none; height:3px; background:#458f54; width:300px; margin:10px auto; opacity:1;">
@@ -547,8 +547,8 @@ const tatibData = {
             </p>
             <br>
                 `
-            }
-        };
+    }
+};
 
 // ===============================
 // DATA E-DOKUMEN
@@ -641,11 +641,11 @@ const fasilitasData = [
 // ===============================
 const eResourcesData = {
     database_ejournal: {
-      deskripsi: `
+        deskripsi: `
                 <h4 class="text-center mb-4">Database E-Journal</h4>
                 <hr style="border:none; height:3px; background:#458f54; width:250px; margin:10px auto; margin-top: -10px; opacity:1;">
-                `,        
-            items: [
+                `,
+        items: [
             {
                 title: "Wiley Online Library",
                 img: "image/ejournal_wiley.png",
@@ -890,9 +890,8 @@ function renderEResources(kategori) {
                     
                     <h6 class="fw-bold">${item.title}</h6>
 
-                    ${
-                        hasSecondButton
-                        ? `
+                    ${hasSecondButton
+                ? `
                         <div class="d-flex justify-content-center gap-2 mt-2">
                             <a href="${item.link1}" target="_blank" class="btn btn-outline-success btn-sm">
                                 Panduan
@@ -902,14 +901,14 @@ function renderEResources(kategori) {
                             </a>
                         </div>
                         `
-                        : `
+                : `
                         <div class="d-flex justify-content-center mt-2">
                             <a href="${item.link1}" target="_blank" class="btn btn-outline-success btn-sm">
                                 Tautan
                             </a>
                         </div>
                         `
-                    }
+            }
 
                 </div>
             </div>
@@ -1127,9 +1126,9 @@ document.addEventListener("DOMContentLoaded", () => {
     Promise.all([
         loadComponent("navbar", "components/navbar.html"),
         loadComponent("banner", "components/banner.html"),
-        loadComponent("informasi", "components/informasi.html"),
-        loadComponent("berita", "components/berita.html"),
-        loadComponent("faq", "components/faq.html"),
+        // loadComponent("informasi", "components/informasi.html"),
+        // loadComponent("berita", "components/berita.html"),
+        // loadComponent("faq", "components/faq.html"),
         loadComponent("video", "components/video.html"),
         loadComponent("footer", "components/footer.html")
     ])

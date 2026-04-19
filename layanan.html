@@ -17,53 +17,65 @@
     </head>
 
     <body>
-        <body>
-            <div id="navbar"></div>
-            <!-- Banner -->
-            <div
-                class="banner d-flex justify-content-center align-items-center text-center"
-            >
-                <div class="container">
-                    <h1 class="display-5 fw-bold text-white">LAYANAN</h1>
-                </div>
+        <div id="navbar"></div>
+        <!-- Banner -->
+        <div
+            class="banner d-flex justify-content-center align-items-center text-center"
+        >
+            <div class="container">
+                <h1 class="display-5 fw-bold text-white">LAYANAN</h1>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <!-- CATEGORY -->
+            <div class="d-flex flex-wrap gap-2 mb-3" id="kategoriTabs">
+                <button
+                    class="btn btn-dark btn-layanan active"
+                    data-kategori="sirkulasi"
+                >
+                    Layanan Sirkulasi
+                </button>
+                <button
+                    class="btn btn-outline-dark btn-layanan"
+                    data-kategori="referensi"
+                >
+                    Layanan Referensi
+                </button>
+                <button
+                    class="btn btn-outline-dark btn-layanan"
+                    data-kategori="digital"
+                >
+                    Layanan Digital
+                </button>
+                <button
+                    class="btn btn-outline-dark btn-layanan"
+                    data-kategori="pendidikan"
+                >
+                    Layanan Pendidikan
+                </button>
+                <button
+                    class="btn btn-outline-dark btn-layanan"
+                    data-kategori="audiovisual"
+                >
+                    Layanan Audio Visual
+                </button>
             </div>
 
-            <div class="container my-5">
-                <!-- CATEGORY -->
-                <div class="d-flex flex-wrap gap-2 mb-3" id="kategoriTabs">
-                    <button class="btn btn-dark btn-layanan active" data-kategori="sirkulasi">
-                        Layanan Sirkulasi
-                    </button>
-                    <button class="btn btn-outline-dark btn-layanan" data-kategori="referensi">
-                        Layanan Referensi
-                    </button>
-                    <button class="btn btn-outline-dark btn-layanan" data-kategori="digital">
-                        Layanan Digital
-                    </button>
-                    <button class="btn btn-outline-dark btn-layanan" data-kategori="pendidikan">
-                        Layanan Pendidikan
-                    </button>
-                    <button class="btn btn-outline-dark btn-layanan" data-kategori="audiovisual">
-                        Layanan Audio Visual
-                    </button>
-                </div>
+            <!-- DESKRIPSI (DARI JS) -->
+            <div id="deskripsi" class="mb-4 text-muted"></div>
 
-                <!-- DESKRIPSI (DARI JS) -->
-                <div id="deskripsi" class="mb-4 text-muted"></div>
+            <!-- LIST (DARI JS) -->
+            <div id="layananList" class="border rounded"></div>
+        </div>
 
-                <!-- LIST (DARI JS) -->
-                <div id="layananList" class="border rounded"></div>
-
-            </div>
-
-            <!-- <div id="informasi"></div>
+        <!-- <div id="informasi"></div>
             <div id="berita"></div>
             <div id="faq"></div>
             <div id="video"></div> -->
-            <div id="footer"></div>
+        <div id="footer"></div>
 
-            <script src="script.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        </body>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
